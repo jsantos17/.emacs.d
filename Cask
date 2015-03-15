@@ -7,6 +7,7 @@
 (depends-on "flx")
 (depends-on "flx-ido")
 (depends-on "flycheck-haskell")
+(depends-on "grizzl")
 (depends-on "haskell-mode")
 (depends-on "magit")
 (depends-on "monokai-theme")

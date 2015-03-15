@@ -71,10 +71,15 @@
 (escreen-install)
 
 (menu-bar-mode -1)
-
 (set-face-attribute 'vertical-border
                     nil
                     :foreground "gray")
+(projectile-global-mode)
+(setq projectile-require-project-root nil)
+(setq projectile-completion-system 'grizzl)
+(setq projectile-enable-caching nil)
+(electric-pair-mode t)
+
 ;;;; Commentary
 
 (provide 'init)
