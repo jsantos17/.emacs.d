@@ -13,4 +13,5 @@
 (depends-on "monokai-theme")
 (depends-on "neotree")
 (depends-on "pallet")
+(depends-on "projectile")
 (depends-on "ws-butler")

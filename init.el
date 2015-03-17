@@ -1,5 +1,5 @@
 ;;;; Code:
-(require 'cask "/Users/juanpablosantos/.emacs.d/.cask/24.4.1/elpa/cask-20150109.621/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.7.1/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
@@ -79,6 +79,43 @@
 (setq projectile-completion-system 'grizzl)
 (setq projectile-enable-caching nil)
 (electric-pair-mode t)
+
+(ws-butler-global-mode)
+
+(setq show-trailing-whitespace t)
+
+(defun delete-this-buffer-and-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
+
+(global-set-key (kbd "C-c k") 'delete-this-buffer-and-file)
+(global-set-key (kbd "C-x f") 'projectile-find-file)
+(global-set-key (kbd "C-x n") 'neotree-toggle)
+
+(custom-set-variables
+  '(haskell-process-suggest-remove-import-lines t)
+  '(haskell-process-auto-import-loaded-modules t)
+  '(haskell-process-log t))
+
+(custom-set-variables
+  '(haskell-process-type 'cabal-repl))
+
+(setq haskell-process-args-cabal-repl
+      '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng"))
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 ;;;; Commentary
 
