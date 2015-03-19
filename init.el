@@ -101,6 +101,9 @@
 (global-set-key (kbd "C-x f") 'projectile-find-file)
 (global-set-key (kbd "C-x n") 'neotree-toggle)
 
+(global-set-key (kbd "C-x ,") 'escreen-goto-prev-screen)
+(global-set-key (kbd "C-x .") 'escreen-goto-next-screen)
+
 (custom-set-variables
   '(haskell-process-suggest-remove-import-lines t)
   '(haskell-process-auto-import-loaded-modules t)
