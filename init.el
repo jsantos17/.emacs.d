@@ -20,6 +20,7 @@
  )
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'after-init-hook #'global-auto-complete-mode)
+(add-hook 'after-init-hook #'ws-butler-global-mode)
 
 (require 'evil)
 (evil-mode 1)
@@ -132,6 +133,8 @@
           'escreen-enable-number-mode-if-more-than-one-screen)
 
 (require 'transpose-frame)
+
+(ac-linum-workaround)
 
 ;;;; Commentary
 
