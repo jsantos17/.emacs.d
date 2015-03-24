@@ -120,6 +120,8 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
+(add-to-list 'auto-mode-alist '("\\.tpl\\'" . html-mode))
+
 ;;;; Commentary
 
 (provide 'init)
