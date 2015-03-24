@@ -19,6 +19,7 @@
  ;; If there is more than one, they won't work right.
  )
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-auto-complete-mode)
 
 (require 'evil)
 (evil-mode 1)
@@ -121,6 +122,16 @@
   '(add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
 
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . html-mode))
+
+(add-hook 'interactive-haskell-mode-hook 'ac-haskell-process-setup)
+(add-hook 'haskell-interactive-mode-hook 'ac-haskell-process-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'haskell-interactive-mode))
+
+(add-hook 'escreen-goto-screen-hook
+          'escreen-enable-number-mode-if-more-than-one-screen)
+
+(require 'transpose-frame)
 
 ;;;; Commentary
 
