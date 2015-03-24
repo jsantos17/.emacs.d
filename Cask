@@ -17,5 +17,6 @@
 (depends-on "neotree")
 (depends-on "pallet")
 (depends-on "projectile")
+(depends-on "smart-mode-line")
 (depends-on "transpose-frame")
 (depends-on "ws-butler")

@@ -9,9 +9,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (monokai)))
- '(custom-safe-themes
-   (quote
-    ("a041a61c0387c57bb65150f002862ebcfe41135a3e3425268de24200b82d6ec9" default))))
+ '(custom-safe-themes (quote ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a041a61c0387c57bb65150f002862ebcfe41135a3e3425268de24200b82d6ec9" default)))
+ '(haskell-process-auto-import-loaded-modules t)
+ '(haskell-process-log t)
+ '(haskell-process-suggest-remove-import-lines t)
+ '(haskell-process-type (quote cabal-repl))
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,6 +37,8 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
 (setq scroll-step 1)
+
+(require 'uniquify)
 
 ;; Enable mouse support
 (unless window-system
@@ -106,14 +111,6 @@
 (global-set-key (kbd "C-x ,") 'escreen-goto-prev-screen)
 (global-set-key (kbd "C-x .") 'escreen-goto-next-screen)
 
-(custom-set-variables
-  '(haskell-process-suggest-remove-import-lines t)
-  '(haskell-process-auto-import-loaded-modules t)
-  '(haskell-process-log t))
-
-(custom-set-variables
-  '(haskell-process-type 'cabal-repl))
-
 (setq haskell-process-args-cabal-repl
       '("--ghc-option=-ferror-spans" "--with-ghc=ghci-ng"))
 
@@ -134,8 +131,9 @@
 
 (require 'transpose-frame)
 
-(ac-linum-workaround)
-
+(add-hook 'haskell-mode-hook #'hindent-mode)
+(sml/setup)
+(sml/apply-theme 'light)
 ;;;; Commentary
 
 (provide 'init)
