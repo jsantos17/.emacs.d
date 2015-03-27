@@ -27,6 +27,13 @@
 
 (require 'evil)
 (evil-mode 1)
+
+(evil-define-key 'insert haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
+(evil-define-key 'normal haskell-interactive-mode-map (kbd "RET") 'haskell-interactive-mode-return)
+
+(setq evil-split-window-below t)
+(setq evil-vsplit-window-right t)
+
 (setq scroll-step            1
       scroll-conservatively  10000)
 
