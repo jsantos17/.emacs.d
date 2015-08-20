@@ -1,5 +1,5 @@
 ;;;; Code:
-(require 'cask "/usr/local/Cellar/cask/0.7.1/cask.el")
+(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el")
 (cask-initialize)
 (require 'pallet)
 (pallet-mode t)
@@ -166,6 +166,16 @@
 (sml/setup)
 (sml/apply-theme 'light)
 (setq linum-format "%d ")
+
+(add-to-list 'load-path "~/.emacs.d/manual/")
+(load "window-margin")
+
+(add-to-list 'auto-mode-alist '("\\.html\.j2\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(setq fill-colum 80)
+
+(add-hook 'text-mode-hook 'auto-fill-mode)
+
 ;;;; Commentary
 
 (provide 'init)
