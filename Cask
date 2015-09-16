@@ -2,6 +2,7 @@
 (source melpa)
 
 (depends-on "ac-haskell-process")
+(depends-on "ac-js2")
 (depends-on "ag")
 (depends-on "auto-complete")
 (depends-on "color-theme-sanityinc-solarized")
@@ -16,6 +17,7 @@
 (depends-on "hindent")
 (depends-on "jade-mode")
 (depends-on "jinja2-mode")
+(depends-on "js2-mode")
 (depends-on "magit")
 (depends-on "markdown-mode+")
 (depends-on "mmm-mode")

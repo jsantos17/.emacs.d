@@ -176,6 +176,15 @@
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
 
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-hook 'js2-mode-hook 'ac-js2-mode)
+(setq js2-highlight-level 3)
+
+(add-hook 'js2-mode-hook
+          (lambda()
+            (require 'flycheck-jscs)
+            (add-to-list 'flycheck-checkers 'javascript-jscs)))
+
 ;;;; Commentary
 
 (provide 'init)
