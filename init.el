@@ -58,6 +58,7 @@
 (setq evil-split-window-below t)
 (setq evil-vsplit-window-right t)
 
+
 (setq scroll-step            1
       scroll-conservatively  10000)
 
@@ -172,6 +173,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.html\.j2\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (setq fill-colum 80)
 
 (add-hook 'text-mode-hook 'auto-fill-mode)
@@ -179,11 +181,17 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 (setq js2-highlight-level 3)
+(setq js2-include-node-externs t)
 
 (add-hook 'js2-mode-hook
           (lambda()
             (require 'flycheck-jscs)
             (add-to-list 'flycheck-checkers 'javascript-jscs)))
+
+(custom-set-variables
+ '(js2-basic-offset 2)
+ '(js2-bounce-indent-p t)
+ )
 
 ;;;; Commentary
 
