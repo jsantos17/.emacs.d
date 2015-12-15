@@ -183,15 +183,12 @@
 (setq js2-highlight-level 3)
 (setq js2-include-node-externs t)
 
-(add-hook 'js2-mode-hook
-          (lambda()
-            (require 'flycheck-jscs)
-            (add-to-list 'flycheck-checkers 'javascript-jscs)))
-
 (custom-set-variables
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  )
+
+(osx-clipboard-mode +1)
 
 ;;;; Commentary
 
