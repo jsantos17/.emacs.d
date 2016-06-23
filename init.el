@@ -20,7 +20,7 @@
  '(custom-enabled-themes (quote (smart-mode-line-dark)))
  '(custom-safe-themes
    (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("6df30cfb75df80e5808ac1557d5cc728746c8dbc9bc726de35b15180fa6e0ad9" "4cf3221feff536e2b3385209e9b9dc4c2e0818a69a1cdb4b522756bcdf4e00a4" "4aee8551b53a43a883cb0b7f3255d6859d766b6c5e14bcb01bed572fcbef4328" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(fci-rule-color "#49483E")
  '(haskell-process-auto-import-loaded-modules t)
  '(haskell-process-log t)
@@ -53,6 +53,35 @@
  '(magit-diff-use-overlays nil)
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
+ '(safe-local-variable-values
+   (quote
+    ((eval define-clojure-indent
+           (match
+            (quote defun))
+           (init-state
+            (quote defun))
+           (some->
+            (quote defun))
+           (satisfies\?
+            (quote defun))
+           (component
+            (quote defun))
+           (will-mount
+            (quote defun))
+           (will-unmount
+            (quote defun))
+           (did-mount
+            (quote defun))
+           (render
+            (quote defun))
+           (render-state
+            (quote defun))
+           (html
+            (quote defun))
+           (render-html
+            (quote defun))
+           (render-state-html
+            (quote defun))))))
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#eee8d5" 0.2))
  '(term-default-bg-color "#fdf6e3")
  '(term-default-fg-color "#657b83")
