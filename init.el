@@ -264,9 +264,8 @@
 (setq js2-include-node-externs t)
 
 (add-hook 'purescript-mode-hook #'haskell-indentation-mode)
-
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'emacs-lisp-hook 'rainbow-delimiters-mode)
+(add-hook 'clojurescript-mode #'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode #'rainbow-delimiters-mode)
 
 (eval-after-load 'flycheck
   '(flycheck-purescript-setup))
